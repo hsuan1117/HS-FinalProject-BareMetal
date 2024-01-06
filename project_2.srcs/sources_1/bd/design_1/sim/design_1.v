@@ -1,15 +1,15 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Fri Dec 22 19:52:19 2023
-//Host        : INFRA-S2 running 64-bit major release  (build 9200)
+//Date        : Sat Jan  6 00:30:18 2024
+//Host        : dc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=13,numNonXlnxBlks=1,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=1,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=21,numReposBlks=14,numNonXlnxBlks=1,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=1,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (jb_pin10_i,
     jb_pin10_o,
@@ -35,7 +35,7 @@ module design_1
     jb_pin9_i,
     jb_pin9_o,
     jb_pin9_t,
-    led_16bits_tri_o,
+    led_0,
     push_buttons_4bits_tri_i,
     reset,
     sys_clock,
@@ -65,7 +65,7 @@ module design_1
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_I" *) input jb_pin9_i;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_O" *) output jb_pin9_o;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_T" *) output jb_pin9_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_16bits TRI_O" *) output [15:0]led_16bits_tri_o;
+  output [0:15]led_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 push_buttons_4bits TRI_I" *) input [3:0]push_buttons_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_1_sys_clock, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input sys_clock;
@@ -96,8 +96,8 @@ module design_1
   wire PmodESP32_0_Pmod_out_PIN9_I;
   wire PmodESP32_0_Pmod_out_PIN9_O;
   wire PmodESP32_0_Pmod_out_PIN9_T;
-  wire [15:0]axi_gpio_0_GPIO2_TRI_O;
   wire [3:0]axi_gpio_0_GPIO_TRI_I;
+  wire [15:0]axi_gpio_0_gpio2_io_o;
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
   wire clk_wiz_0_locked;
@@ -223,6 +223,7 @@ module design_1
   wire rst_clk_wiz_0_100M_mb_reset;
   wire [0:0]rst_clk_wiz_0_100M_peripheral_aresetn;
   wire sys_clock_1;
+  wire [0:15]test_led_0_led;
 
   assign PmodESP32_0_Pmod_out_PIN10_I = jb_pin10_i;
   assign PmodESP32_0_Pmod_out_PIN1_I = jb_pin1_i;
@@ -250,7 +251,7 @@ module design_1
   assign jb_pin8_t = PmodESP32_0_Pmod_out_PIN8_T;
   assign jb_pin9_o = PmodESP32_0_Pmod_out_PIN9_O;
   assign jb_pin9_t = PmodESP32_0_Pmod_out_PIN9_T;
-  assign led_16bits_tri_o[15:0] = axi_gpio_0_GPIO2_TRI_O;
+  assign led_0[0:15] = test_led_0_led;
   assign reset_1 = reset;
   assign sys_clock_1 = sys_clock;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
@@ -316,7 +317,7 @@ module design_1
         .s_axi_aclk(microblaze_0_Clk),
         .s_axi_aresetn(rst_clk_wiz_0_100M_peripheral_aresetn));
   design_1_axi_gpio_0_0 axi_gpio_0
-       (.gpio2_io_o(axi_gpio_0_GPIO2_TRI_O),
+       (.gpio2_io_o(axi_gpio_0_gpio2_io_o),
         .gpio_io_i(axi_gpio_0_GPIO_TRI_I),
         .s_axi_aclk(microblaze_0_Clk),
         .s_axi_araddr(microblaze_0_axi_periph_M00_AXI_ARADDR[8:0]),
@@ -560,6 +561,10 @@ module design_1
         .mb_reset(rst_clk_wiz_0_100M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_0_100M_peripheral_aresetn),
         .slowest_sync_clk(microblaze_0_Clk));
+  design_1_test_led_0_0 test_led_0
+       (.clk(microblaze_0_Clk),
+        .led(test_led_0_led),
+        .led_in({axi_gpio_0_gpio2_io_o[15],axi_gpio_0_gpio2_io_o[14],axi_gpio_0_gpio2_io_o[13],axi_gpio_0_gpio2_io_o[12],axi_gpio_0_gpio2_io_o[11],axi_gpio_0_gpio2_io_o[10],axi_gpio_0_gpio2_io_o[9],axi_gpio_0_gpio2_io_o[8],axi_gpio_0_gpio2_io_o[7],axi_gpio_0_gpio2_io_o[6],axi_gpio_0_gpio2_io_o[5],axi_gpio_0_gpio2_io_o[4],axi_gpio_0_gpio2_io_o[3],axi_gpio_0_gpio2_io_o[2],axi_gpio_0_gpio2_io_o[1],axi_gpio_0_gpio2_io_o[0]}));
 endmodule
 
 module design_1_microblaze_0_axi_periph_0

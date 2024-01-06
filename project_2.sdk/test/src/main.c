@@ -117,15 +117,15 @@ void DemoRun() {
 //		}
 //	}
 
-	u8 cmd3[] = "AT+CWJAP=\"ya526526\",\"0926553986\"\r\n";
-//	u8 cmd3[] = "AT+CWJAP=\"Hsuan-iPhone\",\"password\"\r\n";
+//	u8 cmd3[] = "AT+CWJAP=\"ya526526\",\"0926553986\"\r\n";
+	u8 cmd3[] = "AT+CWJAP=\"Hsuan-iPhone\",\"password\"\r\n";
 	ESP32_SendBuffer(&myESP32, cmd3, strlen(cmd3));
 //	counter=0;
 //	while(counter<100000){ ++counter; }
 	readUntilOK();
 
-//	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"t2.infra.hsuan.app\",80\r\n";
-	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"192.168.1.18\",9090\r\n";
+	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"t2.infra.hsuan.app\",3333\r\n";
+//	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"192.168.1.18\",9090\r\n";
 	ESP32_SendBuffer(&myESP32, cmd5, strlen((char*) cmd5));
 	readUntilOK();
 
@@ -148,16 +148,16 @@ void DemoRun() {
 //	ESP32_SendBuffer(&myESP32, command, length);
 //	readUntilOK();
 
-	bool handshake = false;
+//	bool handshake = false;
 
 	while(1){
-		if(!handshake) {
-			u8 handshake_string[] = "handshake\n";
-			ESP32_SendBuffer(&myESP32, handshake_string, strlen((char*) handshake_string));
-			readUntilOK();
-			handshake = true;
-			setLED(2);
-		}
+//		if(!handshake) {
+//			u8 handshake_string[] = "handshake\n";
+//			ESP32_SendBuffer(&myESP32, handshake_string, strlen((char*) handshake_string));
+//			readUntilOK();
+//			handshake = true;
+//			setLED(2);
+//		}
 
 
 		while(1) {

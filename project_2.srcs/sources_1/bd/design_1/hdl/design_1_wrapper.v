@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Fri Dec 22 19:52:19 2023
-//Host        : INFRA-S2 running 64-bit major release  (build 9200)
+//Date        : Sat Jan  6 00:30:18 2024
+//Host        : dc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -18,7 +18,7 @@ module design_1_wrapper
     jb_pin7_io,
     jb_pin8_io,
     jb_pin9_io,
-    led_16bits_tri_o,
+    led_0,
     push_buttons_4bits_tri_i,
     reset,
     sys_clock,
@@ -32,7 +32,7 @@ module design_1_wrapper
   inout jb_pin7_io;
   inout jb_pin8_io;
   inout jb_pin9_io;
-  output [15:0]led_16bits_tri_o;
+  output [0:15]led_0;
   input [3:0]push_buttons_4bits_tri_i;
   input reset;
   input sys_clock;
@@ -71,7 +71,7 @@ module design_1_wrapper
   wire jb_pin9_io;
   wire jb_pin9_o;
   wire jb_pin9_t;
-  wire [15:0]led_16bits_tri_o;
+  wire [0:15]led_0;
   wire [3:0]push_buttons_4bits_tri_i;
   wire reset;
   wire sys_clock;
@@ -103,7 +103,7 @@ module design_1_wrapper
         .jb_pin9_i(jb_pin9_i),
         .jb_pin9_o(jb_pin9_o),
         .jb_pin9_t(jb_pin9_t),
-        .led_16bits_tri_o(led_16bits_tri_o),
+        .led_0(led_0),
         .push_buttons_4bits_tri_i(push_buttons_4bits_tri_i),
         .reset(reset),
         .sys_clock(sys_clock),
