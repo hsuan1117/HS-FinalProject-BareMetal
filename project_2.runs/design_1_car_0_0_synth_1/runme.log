@@ -1,0 +1,399 @@
+
+*** Running vivado
+    with args -log design_1_car_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_car_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_car_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx/IP/vivado-library-hotfix-PmodOLED_RGB'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+Command: synth_design -top design_1_car_0_0 -part xc7a35tcpg236-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7772 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 397.906 ; gain = 105.258
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_car_0_0' [c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_car_0_0/synth/design_1_car_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'car' [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:1]
+INFO: [Synth 8-6157] synthesizing module 'motor' [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:58]
+	Parameter have bound to: 735 - type: integer 
+	Parameter none bound to: 0 - type: integer 
+	Parameter N bound to: 2'b00 
+	Parameter F bound to: 2'b10 
+	Parameter B bound to: 2'b01 
+	Parameter N_N bound to: 0 - type: integer 
+	Parameter F_F bound to: 1 - type: integer 
+	Parameter B_B bound to: 2 - type: integer 
+	Parameter F_N bound to: 3 - type: integer 
+	Parameter N_F bound to: 4 - type: integer 
+	Parameter B_F bound to: 5 - type: integer 
+	Parameter F_B bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'motor_pwm' [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:113]
+INFO: [Synth 8-6157] synthesizing module 'PWM_gen' [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'PWM_gen' (1#1) [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:131]
+INFO: [Synth 8-6155] done synthesizing module 'motor_pwm' (2#1) [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'motor' (3#1) [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'car' (4#1) [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_car_0_0' (5#1) [c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_car_0_0/synth/design_1_car_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 454.703 ; gain = 162.055
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 454.703 ; gain = 162.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 454.703 ; gain = 162.055
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 758.660 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 758.660 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 760.488 ; gain = 1.828
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 760.488 ; gain = 467.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 760.488 ; gain = 467.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 760.488 ; gain = 467.840
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:139]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 760.488 ; gain = 467.840
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   8 Input     10 Bit        Muxes := 2     
+	   8 Input      2 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PWM_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module motor 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   8 Input     10 Bit        Muxes := 2     
+	   8 Input      2 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP pwm_0/count_duty0, operation Mode is: A*B.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
+DSP Report: Generating DSP pwm_0/count_duty0, operation Mode is: (A:0xfa0)*B.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
+DSP Report: operator pwm_0/count_duty0 is absorbed into DSP pwm_0/count_duty0.
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[0]' (FDC) to 'inst/A/right_motor_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[1]' (FDC) to 'inst/A/right_motor_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[2]' (FDC) to 'inst/A/right_motor_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[3]' (FDC) to 'inst/A/right_motor_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[4]' (FDC) to 'inst/A/right_motor_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[5]' (FDC) to 'inst/A/right_motor_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[6]' (FDC) to 'inst/A/right_motor_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[7]' (FDC) to 'inst/A/right_motor_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/A/right_motor_reg[8]' (FDC) to 'inst/A/left_motor_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[0]' (FDC) to 'inst/A/left_motor_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[1]' (FDC) to 'inst/A/left_motor_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[2]' (FDC) to 'inst/A/left_motor_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[3]' (FDC) to 'inst/A/left_motor_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[4]' (FDC) to 'inst/A/left_motor_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[5]' (FDC) to 'inst/A/left_motor_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[6]' (FDC) to 'inst/A/left_motor_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/A/left_motor_reg[7]' (FDC) to 'inst/A/left_motor_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/A/left_motor_reg[8] )
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[29]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[28]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[23]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[22]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[27]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[26]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[25]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[24]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[19]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[17]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[16]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[13]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[21]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[20]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[18]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[14]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[31]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[30]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m1/pwm_0/count_reg[15]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[29]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[28]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[23]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[22]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[27]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[26]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[25]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[24]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[19]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[17]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[16]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[13]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[21]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[20]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[18]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[14]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[31]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/i_0/inst/A/m0/pwm_0/count_reg[30]' (FDC) to 'inst/i_0/inst/A/m0/pwm_0/count_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/i_0 /\inst/A/m0/pwm_0/count_reg[15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 760.488 ; gain = 467.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|PWM_gen     | A*B         | 14     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|PWM_gen     | (A:0xfa0)*B | 11     | 13     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:71]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 811.508 ; gain = 518.859
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 811.656 ; gain = 519.008
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:70]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [C:/Users/Administrator/project_2/project_2.srcs/sources_1/new/car.v:71]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    14|
+|2     |DSP48E1 |     2|
+|3     |LUT2    |    17|
+|4     |LUT3    |     9|
+|5     |LUT4    |    26|
+|6     |LUT5    |     6|
+|7     |LUT6    |    22|
+|8     |FDCE    |    34|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------+------------+------+
+|      |Instance      |Module      |Cells |
++------+--------------+------------+------+
+|1     |top           |            |   130|
+|2     |  inst        |car         |   130|
+|3     |    A         |motor       |   130|
+|4     |      m0      |motor_pwm   |    59|
+|5     |        pwm_0 |PWM_gen_1   |    59|
+|6     |      m1      |motor_pwm_0 |    59|
+|7     |        pwm_0 |PWM_gen     |    59|
++------+--------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 821.887 ; gain = 223.453
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 821.887 ; gain = 529.238
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 821.887 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+85 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 821.887 ; gain = 542.348
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 821.887 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Administrator/project_2/project_2.runs/design_1_car_0_0_synth_1/design_1_car_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1174] Renamed 6 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 821.887 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Administrator/project_2/project_2.runs/design_1_car_0_0_synth_1/design_1_car_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_car_0_0_utilization_synth.rpt -pb design_1_car_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  6 20:14:10 2024...

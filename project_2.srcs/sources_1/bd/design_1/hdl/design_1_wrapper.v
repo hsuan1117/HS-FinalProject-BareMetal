@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Jan  6 00:30:18 2024
+//Date        : Sat Jan  6 20:13:14 2024
 //Host        : dc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -10,7 +10,11 @@
 `timescale 1 ps / 1 ps
 
 module design_1_wrapper
-   (jb_pin10_io,
+   (IN1_0,
+    IN2_0,
+    IN3_0,
+    IN4_0,
+    jb_pin10_io,
     jb_pin1_io,
     jb_pin2_io,
     jb_pin3_io,
@@ -19,11 +23,17 @@ module design_1_wrapper
     jb_pin8_io,
     jb_pin9_io,
     led_0,
+    left_pwm_0,
     push_buttons_4bits_tri_i,
     reset,
+    right_pwm_0,
     sys_clock,
     usb_uart_rxd,
     usb_uart_txd);
+  output IN1_0;
+  output IN2_0;
+  output IN3_0;
+  output IN4_0;
   inout jb_pin10_io;
   inout jb_pin1_io;
   inout jb_pin2_io;
@@ -33,12 +43,18 @@ module design_1_wrapper
   inout jb_pin8_io;
   inout jb_pin9_io;
   output [0:15]led_0;
+  output left_pwm_0;
   input [3:0]push_buttons_4bits_tri_i;
   input reset;
+  output right_pwm_0;
   input sys_clock;
   input usb_uart_rxd;
   output usb_uart_txd;
 
+  wire IN1_0;
+  wire IN2_0;
+  wire IN3_0;
+  wire IN4_0;
   wire jb_pin10_i;
   wire jb_pin10_io;
   wire jb_pin10_o;
@@ -72,14 +88,20 @@ module design_1_wrapper
   wire jb_pin9_o;
   wire jb_pin9_t;
   wire [0:15]led_0;
+  wire left_pwm_0;
   wire [3:0]push_buttons_4bits_tri_i;
   wire reset;
+  wire right_pwm_0;
   wire sys_clock;
   wire usb_uart_rxd;
   wire usb_uart_txd;
 
   design_1 design_1_i
-       (.jb_pin10_i(jb_pin10_i),
+       (.IN1_0(IN1_0),
+        .IN2_0(IN2_0),
+        .IN3_0(IN3_0),
+        .IN4_0(IN4_0),
+        .jb_pin10_i(jb_pin10_i),
         .jb_pin10_o(jb_pin10_o),
         .jb_pin10_t(jb_pin10_t),
         .jb_pin1_i(jb_pin1_i),
@@ -104,8 +126,10 @@ module design_1_wrapper
         .jb_pin9_o(jb_pin9_o),
         .jb_pin9_t(jb_pin9_t),
         .led_0(led_0),
+        .left_pwm_0(left_pwm_0),
         .push_buttons_4bits_tri_i(push_buttons_4bits_tri_i),
         .reset(reset),
+        .right_pwm_0(right_pwm_0),
         .sys_clock(sys_clock),
         .usb_uart_rxd(usb_uart_rxd),
         .usb_uart_txd(usb_uart_txd));

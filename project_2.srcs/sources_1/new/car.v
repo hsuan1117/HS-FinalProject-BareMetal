@@ -1,12 +1,11 @@
 module car(
     input clk,
     input rst,
-    input echo,
-    input left_track,
-    input right_track,
-    input mid_track,
-    input direction, // control car by this
-    output trig,
+//    input echo,
+//    input left_track,
+//    input right_track,
+//    input mid_track,
+    input [2:0] mode, // control car by this
     output IN1,
     output IN2,
     output IN3, 
@@ -15,7 +14,7 @@ module car(
     output right_pwm
 );
 
-    wire [2:0] state, mode, tp_mode;
+    wire [2:0] state, tp_mode;
     wire [19:0] distance;
     
     motor A(
@@ -27,13 +26,13 @@ module car(
         .r_IN({IN3, IN4})
     );
 
-    sonic_top B(
-        .clk(clk), 
-        .rst(rst), 
-        .Echo(echo), 
-        .Trig(trig),
-        .distance(distance)
-    );
+//    sonic_top B(
+//        .clk(clk), 
+//        .rst(rst), 
+//        .Echo(echo), 
+//        .Trig(trig),
+//        .distance(distance)
+//    );
     
     // control by input: direction
     // parameter N_N = 0;

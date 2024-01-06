@@ -84,6 +84,7 @@ set rc [catch {
   add_files C:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
   read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/basys3.xdc
+  read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/lab8_constrains.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7a35tcpg236-1
   set_param project.isImplRun false

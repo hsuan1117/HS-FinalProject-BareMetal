@@ -5,9 +5,9 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 # Clock signal
-set_property PACKAGE_PIN W5 [get_ports clk]
-set_property IOSTANDARD LVCMOS33 [get_ports clk]
-create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk]
+#set_property PACKAGE_PIN W5 [get_ports clk]
+#set_property IOSTANDARD LVCMOS33 [get_ports clk]
+#create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports clk]
 
 # Switches
 #set_property PACKAGE_PIN V17 [get_ports {servo_enable}]
@@ -137,8 +137,8 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 
 
 # Buttons
- set_property PACKAGE_PIN U18 [get_ports rst]
-    set_property IOSTANDARD LVCMOS33 [get_ports rst]
+# set_property PACKAGE_PIN U18 [get_ports rst]
+#    set_property IOSTANDARD LVCMOS33 [get_ports rst]
 # set_property PACKAGE_PIN T18 [get_ports btn_up]
 #    set_property IOSTANDARD LVCMOS33 [get_ports btn_up]
 # set_property PACKAGE_PIN W19 [get_ports btnL]
@@ -152,23 +152,23 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 
 ## Pmod Header JA
 ## Sch name = JA1
- set_property PACKAGE_PIN J1 [get_ports {IN1}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {IN1}]
+ set_property PACKAGE_PIN J1 [get_ports {IN1_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {IN1_0}]
 ## Sch name = JA2
- set_property PACKAGE_PIN L2 [get_ports {IN2}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {IN2}]
+ set_property PACKAGE_PIN L2 [get_ports {IN2_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {IN2_0}]
 ## Sch name = JA3
- set_property PACKAGE_PIN J2 [get_ports {IN3}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {IN3}]
+ set_property PACKAGE_PIN J2 [get_ports {IN3_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {IN3_0}]
 ## Sch name = JA4
- set_property PACKAGE_PIN G2 [get_ports {IN4}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {IN4}]
+ set_property PACKAGE_PIN G2 [get_ports {IN4_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {IN4_0}]
 ## Sch name = JA7
- set_property PACKAGE_PIN H1 [get_ports {left_pwm}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {left_pwm}]
+ set_property PACKAGE_PIN H1 [get_ports {left_pwm_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {left_pwm_0}]
 ## Sch name = JA8
- set_property PACKAGE_PIN K2 [get_ports {right_pwm}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {right_pwm}]
+ set_property PACKAGE_PIN K2 [get_ports {right_pwm_0}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {right_pwm_0}]
 ## Sch name = JA9
 # set_property PACKAGE_PIN H2 [get_ports {PWM_1}]
 #    set_property IOSTANDARD LVCMOS33 [get_ports {PWM_1}]
@@ -186,23 +186,23 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 # set_property PACKAGE_PIN A16 [get_ports {sonic_echo[0]}]
 #    set_property IOSTANDARD LVCMOS33 [get_ports {sonic_echo[0]}]
 ## Sch name = JB3
- set_property PACKAGE_PIN B15 [get_ports {trig}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {trig}]
+# set_property PACKAGE_PIN B15 [get_ports {trig_0}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {trig_0}]
 ## Sch name = JB4
- set_property PACKAGE_PIN B16 [get_ports {echo}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {echo}]
+# set_property PACKAGE_PIN B16 [get_ports {echo_0}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {echo_0}]
 ## Sch name = JB7
 # set_property PACKAGE_PIN A15 [get_ports {motor_cw[0]}]
 #    set_property IOSTANDARD LVCMOS33 [get_ports {motor_cw[0]}]
 ## Sch name = JB8
- set_property PACKAGE_PIN A17 [get_ports {right_track}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {right_track}]
+# set_property PACKAGE_PIN A17 [get_ports {right_track}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {right_track}]
 ## Sch name = JB9
- set_property PACKAGE_PIN C15 [get_ports {mid_track}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {mid_track}]
+# set_property PACKAGE_PIN C15 [get_ports {mid_track}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {mid_track}]
 ## Sch name = JB10
- set_property PACKAGE_PIN C16 [get_ports {left_track}]
-    set_property IOSTANDARD LVCMOS33 [get_ports {left_track}]
+# set_property PACKAGE_PIN C16 [get_ports {left_track}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {left_track}]
 
 
 
@@ -214,11 +214,11 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 # set_property PACKAGE_PIN M18 [get_ports {JC[1]}]
 #    set_property IOSTANDARD LVCMOS33 [get_ports {JC[1]}]
 ## Sch name = JC3
-# set_property PACKAGE_PIN N17 [get_ports {JC[2]}]
-#    set_property IOSTANDARD LVCMOS33 [get_ports {JC[2]}]
+# set_property PACKAGE_PIN N17 [get_ports {trig_0}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {trig_0}]
 ## Sch name = JC4
-# set_property PACKAGE_PIN P18 [get_ports {JC[3]}]
-#    set_property IOSTANDARD LVCMOS33 [get_ports {JC[3]}]
+# set_property PACKAGE_PIN P18 [get_ports {echo_0}]
+#    set_property IOSTANDARD LVCMOS33 [get_ports {echo_0}]
 ## Sch name = JC7
 # set_property PACKAGE_PIN L17 [get_ports {JC[4]}]
 #    set_property IOSTANDARD LVCMOS33 [get_ports {JC[4]}]

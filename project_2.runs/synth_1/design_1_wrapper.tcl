@@ -72,6 +72,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Administrator
 set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_PmodESP32_0_0/src/PmodESP32_axi_gpio_0_0/PmodESP32_axi_gpio_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_PmodESP32_0_0/src/PmodESP32_axi_gpio_0_0/PmodESP32_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_PmodESP32_0_0/src/PmodESP32_axi_gpio_0_0/PmodESP32_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_1/design_1_axi_gpio_1_1.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -84,6 +87,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/basys3.xdc
 set_property used_in_implementation false [get_files C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/basys3.xdc]
+
+read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/lab8_constrains.xdc
+set_property used_in_implementation false [get_files C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/lab8_constrains.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
