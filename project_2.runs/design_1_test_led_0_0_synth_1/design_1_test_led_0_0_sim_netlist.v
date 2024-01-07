@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Jan  6 00:31:06 2024
+// Date        : Sun Jan  7 04:35:52 2024
 // Host        : dc running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_test_led_0_0_sim_netlist.v
@@ -21,11 +21,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     led);
   input [0:15]led_in;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input clk;
-  output [0:15]led;
+  output [0:8]led;
 
   wire [0:15]led_in;
 
-  assign led[0:15] = led_in;
+  assign led[0:8] = led_in[7:15];
 endmodule
 `ifndef GLBL
 `define GLBL

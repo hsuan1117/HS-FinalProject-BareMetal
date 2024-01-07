@@ -255,7 +255,8 @@ proc create_root_design { parentCell } {
   set IN2_0 [ create_bd_port -dir O IN2_0 ]
   set IN3_0 [ create_bd_port -dir O IN3_0 ]
   set IN4_0 [ create_bd_port -dir O IN4_0 ]
-  set led_0 [ create_bd_port -dir O -from 0 -to 15 led_0 ]
+  set gpio_io_o_0 [ create_bd_port -dir O -from 3 -to 0 gpio_io_o_0 ]
+  set led_0 [ create_bd_port -dir O -from 0 -to 8 led_0 ]
   set left_pwm_0 [ create_bd_port -dir O left_pwm_0 ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
@@ -288,7 +289,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.C_ALL_INPUTS {0} \
    CONFIG.C_ALL_OUTPUTS {1} \
-   CONFIG.C_GPIO_WIDTH {3} \
+   CONFIG.C_GPIO_WIDTH {4} \
    CONFIG.GPIO_BOARD_INTERFACE {Custom} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_gpio_1
@@ -370,7 +371,7 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_pins axi_gpio_0/gpio2_io_o] [get_bd_pins test_led_0/led_in]
-  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins car_0/mode]
+  connect_bd_net -net axi_gpio_1_gpio_io_o [get_bd_ports gpio_io_o_0] [get_bd_pins axi_gpio_1/gpio_io_o] [get_bd_pins car_0/mode]
   connect_bd_net -net car_0_IN1 [get_bd_ports IN1_0] [get_bd_pins car_0/IN1]
   connect_bd_net -net car_0_IN2 [get_bd_ports IN2_0] [get_bd_pins car_0/IN2]
   connect_bd_net -net car_0_IN3 [get_bd_ports IN3_0] [get_bd_pins car_0/IN3]
@@ -383,7 +384,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins clk_wiz_0/reset] [get_bd_pins rst_clk_wiz_0_100M/ext_reset_in]
   connect_bd_net -net rst_clk_wiz_0_100M_bus_struct_reset [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_clk_wiz_0_100M/bus_struct_reset]
   connect_bd_net -net rst_clk_wiz_0_100M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins rst_clk_wiz_0_100M/mb_reset]
-  connect_bd_net -net rst_clk_wiz_0_100M_peripheral_aresetn [get_bd_pins PmodESP32_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins car_0/rst] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins rst_clk_wiz_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_clk_wiz_0_100M_peripheral_aresetn [get_bd_pins PmodESP32_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins rst_clk_wiz_0_100M/peripheral_aresetn]
   connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net test_led_0_led [get_bd_ports led_0] [get_bd_pins test_led_0/led]
 

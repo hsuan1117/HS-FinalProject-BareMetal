@@ -66,7 +66,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -84,7 +83,6 @@ set rc [catch {
   add_files C:/Users/Administrator/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
   read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/basys3.xdc
-  read_xdc C:/Users/Administrator/project_2/project_2.srcs/constrs_1/new/lab8_constrains.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7a35tcpg236-1
   set_param project.isImplRun false

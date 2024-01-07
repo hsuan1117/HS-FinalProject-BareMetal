@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Jan  6 20:15:57 2024
+| Date         : Sun Jan  7 13:15:25 2024
 | Host         : dc running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 | Design       : design_1_wrapper
@@ -24,14 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 7
+             Violations found: 3
 +--------+----------+--------------------------+------------+
 | Rule   | Severity | Description              | Violations |
 +--------+----------+--------------------------+------------+
 | BUFC-1 | Warning  | Input Buffer Connections | 1          |
-| DPIP-1 | Warning  | Input pipelining         | 2          |
-| DPOP-1 | Warning  | PREG Output pipelining   | 2          |
-| DPOP-2 | Warning  | MREG Output pipelining   | 2          |
+| DPOP-1 | Warning  | PREG Output pipelining   | 1          |
+| DPOP-2 | Warning  | MREG Output pipelining   | 1          |
 +--------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
@@ -41,34 +40,14 @@ Input Buffer Connections
 Input buffer jb_pin2_iobuf/IBUF (in jb_pin2_iobuf macro) has no loads. It is recommended to have an input buffer drive an internal load.
 Related violations: <none>
 
-DPIP-1#1 Warning
-Input pipelining  
-DSP design_1_i/car_0/inst/A/m0/pwm_0/count_duty0 input design_1_i/car_0/inst/A/m0/pwm_0/count_duty0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#2 Warning
-Input pipelining  
-DSP design_1_i/car_0/inst/A/m1/pwm_0/count_duty0 input design_1_i/car_0/inst/A/m1/pwm_0/count_duty0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
 DPOP-1#1 Warning
 PREG Output pipelining  
 DSP design_1_i/car_0/inst/A/m0/pwm_0/count_duty0 output design_1_i/car_0/inst/A/m0/pwm_0/count_duty0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
-DPOP-1#2 Warning
-PREG Output pipelining  
-DSP design_1_i/car_0/inst/A/m1/pwm_0/count_duty0 output design_1_i/car_0/inst/A/m1/pwm_0/count_duty0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
 DPOP-2#1 Warning
 MREG Output pipelining  
 DSP design_1_i/car_0/inst/A/m0/pwm_0/count_duty0 multiplier stage design_1_i/car_0/inst/A/m0/pwm_0/count_duty0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#2 Warning
-MREG Output pipelining  
-DSP design_1_i/car_0/inst/A/m1/pwm_0/count_duty0 multiplier stage design_1_i/car_0/inst/A/m1/pwm_0/count_duty0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 

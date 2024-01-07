@@ -1,18 +1,129 @@
-20:33:14 **** Incremental Build of configuration Debug for project test ****
+15:34:47 **** Incremental Build of configuration Debug for project test ****
 make all 
 make: Nothing to be done for 'all'.
-20:42:35 **** Incremental Build of configuration Debug for project test ****
+15:34:51 **** Incremental Build of configuration Debug for project test ****
 make all 
 make: Nothing to be done for 'all'.
-20:48:05 **** Incremental Build of configuration Debug for project test ****
+16:14:20 **** Incremental Build of configuration Debug for project test ****
 make all 
 make: Nothing to be done for 'all'.
-20:51:48 **** Incremental Build of configuration Debug for project test ****
+16:15:32 **** Auto Build of configuration Debug for project test ****
 make all 
-make: Nothing to be done for 'all'.
-20:52:05 **** Incremental Build of configuration Debug for project test ****
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../test_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:8:0:
+../src/main.c: In function 'DemoInitialize':
+../../test_bsp/microblaze_0/include/xparameters.h:606:38: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define XPAR_AXI_UARTLITE_0_BASEADDR 0x40600000
+                                      ^
+../src/main.c:15:29: note: in expansion of macro 'XPAR_AXI_UARTLITE_0_BASEADDR'
+ #define HOST_UART_DEVICE_ID XPAR_AXI_UARTLITE_0_BASEADDR
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:59:33: note: in expansion of macro 'HOST_UART_DEVICE_ID'
+  CfgPtr = HostUart_LookupConfig(HOST_UART_DEVICE_ID);
+                                 ^~~~~~~~~~~~~~~~~~~
+../src/main.c: In function 'DemoRun':
+../src/main.c:150:42: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  ESP32_SendBuffer(&myESP32, cmd3, strlen(cmd3));
+                                          ^~~~
+In file included from c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\ctype.h:4:0,
+                 from ../../test_bsp/microblaze_0/include/xil_printf.h:8,
+                 from ../src/main.c:9:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\string.h:33:9: note: expected 'const char *' but argument is of type 'u8 * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: test.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "test.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10932	    356	   2312	  13600	   3520	test.elf
+'Finished building: test.elf.size'
+' '
+16:15:41 **** Auto Build of configuration Debug for project test ****
 make all 
-make: Nothing to be done for 'all'.
-20:52:33 **** Incremental Build of configuration Debug for project test ****
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../test_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:8:0:
+../src/main.c: In function 'DemoInitialize':
+../../test_bsp/microblaze_0/include/xparameters.h:606:38: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define XPAR_AXI_UARTLITE_0_BASEADDR 0x40600000
+                                      ^
+../src/main.c:15:29: note: in expansion of macro 'XPAR_AXI_UARTLITE_0_BASEADDR'
+ #define HOST_UART_DEVICE_ID XPAR_AXI_UARTLITE_0_BASEADDR
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:59:33: note: in expansion of macro 'HOST_UART_DEVICE_ID'
+  CfgPtr = HostUart_LookupConfig(HOST_UART_DEVICE_ID);
+                                 ^~~~~~~~~~~~~~~~~~~
+../src/main.c: In function 'DemoRun':
+../src/main.c:150:42: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  ESP32_SendBuffer(&myESP32, cmd3, strlen(cmd3));
+                                          ^~~~
+In file included from c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\ctype.h:4:0,
+                 from ../../test_bsp/microblaze_0/include/xil_printf.h:8,
+                 from ../src/main.c:9:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\string.h:33:9: note: expected 'const char *' but argument is of type 'u8 * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: test.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "test.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10932	    356	   2312	  13600	   3520	test.elf
+'Finished building: test.elf.size'
+' '
+16:15:47 **** Auto Build of configuration Debug for project test ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../test_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:8:0:
+../src/main.c: In function 'DemoInitialize':
+../../test_bsp/microblaze_0/include/xparameters.h:606:38: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+ #define XPAR_AXI_UARTLITE_0_BASEADDR 0x40600000
+                                      ^
+../src/main.c:15:29: note: in expansion of macro 'XPAR_AXI_UARTLITE_0_BASEADDR'
+ #define HOST_UART_DEVICE_ID XPAR_AXI_UARTLITE_0_BASEADDR
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:59:33: note: in expansion of macro 'HOST_UART_DEVICE_ID'
+  CfgPtr = HostUart_LookupConfig(HOST_UART_DEVICE_ID);
+                                 ^~~~~~~~~~~~~~~~~~~
+../src/main.c: In function 'DemoRun':
+../src/main.c:150:42: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  ESP32_SendBuffer(&myESP32, cmd3, strlen(cmd3));
+                                          ^~~~
+In file included from c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\ctype.h:4:0,
+                 from ../../test_bsp/microblaze_0/include/xil_printf.h:8,
+                 from ../src/main.c:9:
+c:\xilinx\sdk\2018.3\gnu\microblaze\nt\microblaze-xilinx-elf\include\string.h:33:9: note: expected 'const char *' but argument is of type 'u8 * {aka unsigned char *}'
+ size_t  _EXFUN(strlen,(const char *));
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: test.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "test.elf"  ./src/main.o ./src/main2.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  10932	    356	   2312	  13600	   3520	test.elf
+'Finished building: test.elf.size'
+' '
+16:16:10 **** Incremental Build of configuration Debug for project test ****
 make all 
 make: Nothing to be done for 'all'.

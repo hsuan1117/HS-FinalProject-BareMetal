@@ -56,7 +56,6 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_car_0_0 (
   clk,
-  rst,
   mode,
   IN1,
   IN2,
@@ -66,13 +65,10 @@ module design_1_car_0_0 (
   right_pwm
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
-input wire rst;
-input wire [2 : 0] mode;
+input wire [3 : 0] mode;
 output wire IN1;
 output wire IN2;
 output wire IN3;
@@ -82,7 +78,6 @@ output wire right_pwm;
 
   car inst (
     .clk(clk),
-    .rst(rst),
     .mode(mode),
     .IN1(IN1),
     .IN2(IN2),

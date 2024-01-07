@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Jan  6 20:13:14 2024
+//Date        : Sun Jan  7 13:12:19 2024
 //Host        : dc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -14,6 +14,7 @@ module design_1_wrapper
     IN2_0,
     IN3_0,
     IN4_0,
+    gpio_io_o_0,
     jb_pin10_io,
     jb_pin1_io,
     jb_pin2_io,
@@ -34,6 +35,7 @@ module design_1_wrapper
   output IN2_0;
   output IN3_0;
   output IN4_0;
+  output [3:0]gpio_io_o_0;
   inout jb_pin10_io;
   inout jb_pin1_io;
   inout jb_pin2_io;
@@ -42,7 +44,7 @@ module design_1_wrapper
   inout jb_pin7_io;
   inout jb_pin8_io;
   inout jb_pin9_io;
-  output [0:15]led_0;
+  output [0:8]led_0;
   output left_pwm_0;
   input [3:0]push_buttons_4bits_tri_i;
   input reset;
@@ -55,6 +57,7 @@ module design_1_wrapper
   wire IN2_0;
   wire IN3_0;
   wire IN4_0;
+  wire [3:0]gpio_io_o_0;
   wire jb_pin10_i;
   wire jb_pin10_io;
   wire jb_pin10_o;
@@ -87,7 +90,7 @@ module design_1_wrapper
   wire jb_pin9_io;
   wire jb_pin9_o;
   wire jb_pin9_t;
-  wire [0:15]led_0;
+  wire [0:8]led_0;
   wire left_pwm_0;
   wire [3:0]push_buttons_4bits_tri_i;
   wire reset;
@@ -101,6 +104,7 @@ module design_1_wrapper
         .IN2_0(IN2_0),
         .IN3_0(IN3_0),
         .IN4_0(IN4_0),
+        .gpio_io_o_0(gpio_io_o_0),
         .jb_pin10_i(jb_pin10_i),
         .jb_pin10_o(jb_pin10_o),
         .jb_pin10_t(jb_pin10_t),

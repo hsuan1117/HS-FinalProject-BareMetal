@@ -23,7 +23,7 @@
 module test_led(
     input [0:15] led_in,
     input clk,
-    output wire [0:15] led
+    output wire [0:8] led
     );
     assign led = led_in;
 endmodule

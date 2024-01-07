@@ -44,12 +44,14 @@ void DemoCleanup();
 
 PmodESP32 myESP32;
 HostUart myHostUart;
-XGpio gpio;
+XGpio gpio, motor;
 u32 led;
 
 void DemoInitialize () {
 	XGpio_Initialize(&gpio, 0);
+	XGpio_Initialize(&motor, 1);
 	XGpio_SetDataDirection(&gpio, 2, 0x00000000); // set LED GPIO channel tristates to All Output
+	XGpio_SetDataDirection(&motor, 1, 0x00000000); // set LED GPIO channel tristates to All Output
 
 	HostUart_Config *CfgPtr;
 	EnableCaches();
@@ -79,10 +81,36 @@ void setLED(int val) {
 	XGpio_DiscreteWrite(&gpio, 2, led);
 }
 
+void speed(int v) {
+	if(v == 0) {
+		// no move
+		XGpio_DiscreteWrite(&motor, 1,  0b0000);
+	} else if(v == 1) {
+		// F_F
+		XGpio_DiscreteWrite(&motor, 1,  0b0101);
+	} else if(v == 2) {
+		// B_B
+		XGpio_DiscreteWrite(&motor, 1,  0b1010);
+	} else if(v == 3) {
+		// F_N
+		XGpio_DiscreteWrite(&motor, 1,  0b0100);
+	} else if(v == 4) {
+		// N_F
+		XGpio_DiscreteWrite(&motor, 1,  0b0001);
+	} else if(v == 5) {
+		// F_B
+		XGpio_DiscreteWrite(&motor, 1,  0b0110);
+	} else if(v == 6) {
+		// B F
+		XGpio_DiscreteWrite(&motor, 1,  0b1001);
+	} else {
+		XGpio_DiscreteWrite(&motor, 1,  0b0000);
+	}
+}
+
 void DemoRun() {
 
 	xil_printf("\r\nEXEC:\r\n");
-
 //	char cmd[] = "AT\r\n";
 
 //	while (1) {
@@ -124,6 +152,9 @@ void DemoRun() {
 //	while(counter<100000){ ++counter; }
 	readUntilOK();
 
+
+	XGpio_DiscreteWrite(&gpio, 2, 0b00000111);
+
 	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"t2.infra.hsuan.app\",3333\r\n";
 //	u8 cmd5[] = "AT+CIPSTART=\"TCP\",\"192.168.1.18\",9090\r\n";
 	ESP32_SendBuffer(&myESP32, cmd5, strlen((char*) cmd5));
@@ -135,7 +166,8 @@ void DemoRun() {
 	u8 cmd02[] = "AT+CIPSEND\r\n";
 	ESP32_SendBuffer(&myESP32, cmd02, strlen((char*) cmd02));
 	readUntilOK();
-	setLED(1);
+
+	XGpio_DiscreteWrite(&gpio, 2, 0b00011111 );
 
 
 //	u8 command[40];
@@ -164,7 +196,8 @@ void DemoRun() {
 			num_received = ESP32_Recv(&myESP32, &recv_buffer, 1);
 			if (num_received > 0) {
 				setLED(recv_buffer-'0');
-				xil_printf("%c", recv_buffer);
+				speed(recv_buffer-'0');
+				xil_printf("recv: %c\n", recv_buffer);
 			} else break;
 		}
 

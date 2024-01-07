@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Jan  6 20:13:14 2024
+//Date        : Sun Jan  7 13:12:19 2024
 //Host        : dc running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -15,6 +15,7 @@ module design_1
     IN2_0,
     IN3_0,
     IN4_0,
+    gpio_io_o_0,
     jb_pin10_i,
     jb_pin10_o,
     jb_pin10_t,
@@ -51,6 +52,7 @@ module design_1
   output IN2_0;
   output IN3_0;
   output IN4_0;
+  output [3:0]gpio_io_o_0;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN10_I" *) input jb_pin10_i;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN10_O" *) output jb_pin10_o;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN10_T" *) output jb_pin10_t;
@@ -75,7 +77,7 @@ module design_1
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_I" *) input jb_pin9_i;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_O" *) output jb_pin9_o;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 jb PIN9_T" *) output jb_pin9_t;
-  output [0:15]led_0;
+  output [0:8]led_0;
   output left_pwm_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 push_buttons_4bits TRI_I" *) input [3:0]push_buttons_4bits_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
@@ -110,7 +112,7 @@ module design_1
   wire PmodESP32_0_Pmod_out_PIN9_T;
   wire [3:0]axi_gpio_0_GPIO_TRI_I;
   wire [15:0]axi_gpio_0_gpio2_io_o;
-  wire [2:0]axi_gpio_1_gpio_io_o;
+  wire [3:0]axi_gpio_1_gpio_io_o;
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
   wire car_0_IN1;
@@ -259,7 +261,7 @@ module design_1
   wire rst_clk_wiz_0_100M_mb_reset;
   wire [0:0]rst_clk_wiz_0_100M_peripheral_aresetn;
   wire sys_clock_1;
-  wire [0:15]test_led_0_led;
+  wire [0:8]test_led_0_led;
 
   assign IN1_0 = car_0_IN1;
   assign IN2_0 = car_0_IN2;
@@ -275,6 +277,7 @@ module design_1
   assign PmodESP32_0_Pmod_out_PIN9_I = jb_pin9_i;
   assign axi_gpio_0_GPIO_TRI_I = push_buttons_4bits_tri_i[3:0];
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
+  assign gpio_io_o_0[3:0] = axi_gpio_1_gpio_io_o;
   assign jb_pin10_o = PmodESP32_0_Pmod_out_PIN10_O;
   assign jb_pin10_t = PmodESP32_0_Pmod_out_PIN10_T;
   assign jb_pin1_o = PmodESP32_0_Pmod_out_PIN1_O;
@@ -291,7 +294,7 @@ module design_1
   assign jb_pin8_t = PmodESP32_0_Pmod_out_PIN8_T;
   assign jb_pin9_o = PmodESP32_0_Pmod_out_PIN9_O;
   assign jb_pin9_t = PmodESP32_0_Pmod_out_PIN9_T;
-  assign led_0[0:15] = test_led_0_led;
+  assign led_0[0:8] = test_led_0_led;
   assign left_pwm_0 = car_0_left_pwm;
   assign reset_1 = reset;
   assign right_pwm_0 = car_0_right_pwm;
@@ -431,8 +434,7 @@ module design_1
         .clk(microblaze_0_Clk),
         .left_pwm(car_0_left_pwm),
         .mode(axi_gpio_1_gpio_io_o),
-        .right_pwm(car_0_right_pwm),
-        .rst(rst_clk_wiz_0_100M_peripheral_aresetn));
+        .right_pwm(car_0_right_pwm));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(sys_clock_1),
         .clk_out1(microblaze_0_Clk),
