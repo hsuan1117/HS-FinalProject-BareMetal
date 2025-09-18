@@ -1,5 +1,6 @@
 # Hardware Studio 硬體設計實驗期末專案
 題目：Remote-controlled car with Xilinx Basys3
+
 技術棧：Verilog + ESP32 + App Project
 
 - Developed a remote-controlled car platform on Xilinx Basys3 using a MicroBlaze soft processor, Verilog logic, and integrated Pmod ESP32 module for wireless communication.
